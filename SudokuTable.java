@@ -13,7 +13,7 @@ public class SudokuTable {
 		this.sudokuTable = table;
 	}
 
-	public void setRowsColumnsCells() {
+	private void setRowsColumnsCells() {
 
 		for (int i = 0; i < 9; i++) {
 			rows.add(new ArrayList<Integer>());
@@ -32,14 +32,8 @@ public class SudokuTable {
 		}
 	}
 
-	public void startFilling() {
+	private void startFilling() {
 		fillCellsWithOnlyOnePossible(sudokuTable);
-	}
-
-	public void findPossiblesForEveryIndex() {
-		for (int i = 0; i < 81; i++) {
-			findPossibles(i, sudokuTable);
-		}
 	}
 
 	private void fillCellsWithOnlyOnePossible(List<Integer> tempTable) {
@@ -144,6 +138,7 @@ public class SudokuTable {
 	}
 
 	public List<Integer> getFilledTable() {
+		setRowsColumnsCells();
 		startFilling();
 		return sudokuTable;
 	}

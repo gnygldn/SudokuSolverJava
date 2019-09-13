@@ -10,11 +10,10 @@ public class Main {
 
 		Date date = new Date();
 		SudokuTable sudokuTable = new SudokuTable(sudokuTableNumbers);
-		sudokuTable.setRowsColumnsCells();
 		List<Integer> filledTable = sudokuTable.getFilledTable();
 		printSudokuTable(filledTable);
 		Date date2 = new Date();
-		System.out.println(date2.getTime() - date.getTime());
+		System.out.println("Finish Time: " + (date2.getTime() - date.getTime()));
 		return;
 	}
 	
@@ -26,13 +25,13 @@ public class Main {
 	}
 	
 	private static void printSudokuTable(List<Integer> tempTable) {
-		System.out.println("last");
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				System.out.print(tempTable.get(i * 9 + j) + " ");
 			}
 			System.out.println();
 		}
+		System.out.println();
 	}
 
 }
